@@ -1,0 +1,20 @@
+# --- System / Editors ---
+.DS_Store
+.vscode/
+.idea/
+*.sw?
+*.log
+
+# --- Frontend (Vite) ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env*
+
+# --- Backend (Python) ---
+backend/venv/
+backend/.env
+backend/__pycache__/
+backend/*.py[cod]
+backend/.pytest_cache/
