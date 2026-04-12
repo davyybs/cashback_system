@@ -1,19 +1,9 @@
-def def_cashback (price, vip, discount=0):
-    normalCashback = 0.05
-    vipCashback = 0.1
+from fastapi import FastAPI
 
-    if discount > 0:
-        discount /= 100
-        price -= discount * price
+app = FastAPI()
 
-    cashbackValue = price * normalCashback
+from routes import router
 
-    if vip == True:
-        cashbackValue = cashbackValue * vipCashback + cashbackValue
+app.include_router(router)
 
-    if price > 500:
-        cashbackValue *= 2
-    
-    return cashbackValue
-
-print(def_cashback(600, True, 15))
+#para rodar o código, escrever no terminal: uvicorn main:app --reload
