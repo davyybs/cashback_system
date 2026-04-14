@@ -44,6 +44,9 @@ async def calculate_cashback(request: Request, price:float, vip:bool, discount:i
 
 @router.get("/history")
 async def get_history(request: Request, db: Session = Depends(get_db)):
+    """
+    Rota para pegar o histórico do cashback baseado no IP do usuário
+    """
     user_ip = request.client.host
     
     query = db.query(CashbackHistory).filter(CashbackHistory.user_ip == user_ip).all()
