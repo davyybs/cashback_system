@@ -4,12 +4,12 @@ Este é um projeto BackEnd utilizando Python e o framework FastAPI, nele foi fei
 
 ## Tecnologias
 
-Python
-FastAPI
-Uvicorn
-PyMySQL
-SQLAlchemy
-Alembic
+- Python
+- FastAPI
+- Uvicorn
+- PyMySQL
+- SQLAlchemy
+- Alembic
 
 ## Documentação
 
