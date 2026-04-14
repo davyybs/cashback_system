@@ -1,26 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.scss">
-    <script rel="/main.js"></script>
-    <title>desafio-estagio-nology</title>
+    <script type="module" src="/main.js"></script>
+    <title>Calculate Cashback</title>
   </head>
   <body>
-    <form action="">
+    <form id="cashbackForm">
       <div class="form-div">
+        <label for="price" class="form-label">Valor da Compra</label>
+        <input type="number" name="price" id="price" step="any">
+
+        <label for="discount" class="form-label">Desconto</label>
+        <input type="number" name="discount" id="discount">
+
         <label for="user_type" class="form-label">Tipo do Cliente</label>
-        <select name="user_type" id="">
-          <option value="">Cliente Comum</option>
-          <option value="">Cliente VIP</option>
+        <select name="user_type" id="vip">
+          <option value="false">Cliente Comum</option>
+          <option value="true">Cliente VIP</option>
         </select>
 
-        <label for="price" class="form-label">Valor da Compra</label>
-        <input type="text" name="price">
-        
         <button type="submit" class="btn btn-success m-4">Calcular Cashback</button>
+
+        <p id="result"></p>
       </div>
     </form>
   </body>
