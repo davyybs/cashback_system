@@ -8,7 +8,7 @@ router = APIRouter(prefix="/cashback", tags=["cashback"])
 def get_real_ip(request: Request):
 
     forwarded = request.headers.get("X-Forwarded-For")
-    
+
     if forwarded:
         return forwarded.split(",")[0]
     return request.client.host
@@ -59,7 +59,7 @@ async def get_history(request: Request, db: Session = Depends(get_db)):
     """
     Rota para pegar o histórico do cashback baseado no IP do usuário
     """
-    user_ip = request.client.host
+    user_ip = get_real_ip(request)
     
     query = db.query(CashbackHistory).filter(CashbackHistory.user_ip == user_ip).all()
     
