@@ -18,13 +18,11 @@ class CashbackHistory(Base):
     id = Column("id", Integer, primary_key=True, autoincrement=True)
     user_ip = Column("user_ip", String(255), nullable=False)
     price = Column("price", Float, nullable=False)
-    discount = Column("discount", Integer, default=0)
     vip = Column("vip", Boolean, nullable=False)
     cashback_value = Column("cashback_value", Float, nullable=False)
 
-    def __init__(self, user_ip, price, discount, vip, cashback_value):
+    def __init__(self, user_ip, price, vip, cashback_value):
         self.user_ip = user_ip
         self.price = price
-        self.discount = discount
         self.vip = vip
         self.cashback_value = cashback_value

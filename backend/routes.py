@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request, Depends
+from fastapi import APIRouter, Request, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import get_db
 from models import CashbackHistory
@@ -11,6 +11,9 @@ async def calculate_cashback(request: Request, price:float, vip:bool, discount:i
     Rota padrão para calcular o cashback da compra do cliente
     """
     user_ip = request.client.host #get the user IP
+
+    if price < 0 or discount < 0:
+        raise HTTPException(status_code=400, detail="Valores não podem ser negativos")
 
     normalCashback = 0.05
     vipCashback = 0.1
@@ -27,11 +30,12 @@ async def calculate_cashback(request: Request, price:float, vip:bool, discount:i
     if price > 500:
         cashbackValue *= 2
 
+    cashbackValue = round(cashbackValue, 2)
+
     #create an object and add the values
     registration = CashbackHistory(
         user_ip=user_ip,
         price=price,
-        discount=discount,
         vip=vip,
         cashback_value=cashbackValue
     )
