@@ -1,4 +1,4 @@
-const url = "http://cashbacksystem-production.up.railway.app/cashback/history";
+const url = "https://cashbacksystem-production.up.railway.app/cashback/history";
 
 const answer = await fetch(url);
 const data = await answer.json();

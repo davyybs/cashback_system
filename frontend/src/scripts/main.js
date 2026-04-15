@@ -7,7 +7,7 @@ document.getElementById("cashbackForm").addEventListener("submit", async functio
     const discount = document.getElementById("discount").value || 0;
     const vip = document.getElementById("vip").value;
     
-    const url = `http://cashbacksystem-production.up.railway.app/cashback/?price=${price}&discount=${discount}&vip=${vip}`;
+    const url = `https://cashbacksystem-production.up.railway.app/cashback/?price=${price}&discount=${discount}&vip=${vip}`;
     
     const answer = await fetch(url);
     const data = await answer.json();
