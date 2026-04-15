@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.scss">
-    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/styles/style.scss">
+    <script type="module" src="/scripts/main.js"></script>
     <title>Calculate Cashback</title>
   </head>
   <body>
     <form id="cashbackForm">
       <div class="form-div">
         <label for="price" class="form-label">Valor da Compra</label>
-        <input type="number" name="price" id="price" step="any">
+        <input type="number" name="price" id="price" step="any" min="0">
 
         <label for="discount" class="form-label">Desconto</label>
-        <input type="number" name="discount" id="discount">
+        <input type="number" name="discount" id="discount" min="0">
 
         <label for="user_type" class="form-label">Tipo do Cliente</label>
         <select name="user_type" id="vip">
@@ -26,6 +26,7 @@
         <button type="submit" class="btn btn-success m-4">Calcular Cashback</button>
 
         <p id="result"></p>
+        <a href="/history.html" class="btn btn-warning">Histórico de Compras</a>
       </div>
     </form>
   </body>

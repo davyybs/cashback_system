@@ -1,4 +1,4 @@
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+//Get Cashback API
 
 document.getElementById("cashbackForm").addEventListener("submit", async function(event) {
     event.preventDefault();
